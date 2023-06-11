@@ -1,0 +1,6 @@
+name: CustomItemPlugin
+version: '${project.version}'
+main: attwgrat.customitemplugin.CustomItemPlugin
+api-version: 1.19
+authors: [ATTWGRAT]
+description: Custom item plugin for learning how to code spigot plugins
