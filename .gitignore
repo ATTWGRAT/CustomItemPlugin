@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/java,maven
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,maven
-
+.idea
 ### Java ###
 # Compiled class file
 *.class
