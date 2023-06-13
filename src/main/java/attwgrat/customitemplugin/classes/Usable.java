@@ -11,6 +11,6 @@ import java.util.List;
 public interface Usable {
     void use(Player user, List<Entity> usedOn, Block usedBlock);
     ItemStack getItem();
-    Permission permission = new Permission("customItemUse");
+    long getCooldown();
 
 }

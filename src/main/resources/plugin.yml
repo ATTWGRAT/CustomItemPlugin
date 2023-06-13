@@ -4,3 +4,30 @@ main: attwgrat.customitemplugin.CustomItemPlugin
 api-version: 1.19
 authors: [ATTWGRAT]
 description: Custom item plugin for learning how to code spigot plugins
+permissions:
+  cip.*:
+    description: All permissions
+    children:
+      cip.getitem: true
+      cip.getitems: true
+      cip.useitems: true
+  cip.getitem:
+    description: Get a custom item with a given name
+    default: op
+  cip.getitems:
+    description: Get all custom items
+    default: op
+  cip.useitems:
+    description: Use custom items
+    default: op
+commands:
+  getitem:
+    description: Get a custom item with a given name
+    usage: §c/<command> [name]
+    permission: cip.getitem
+    permission-message: §cYou don't have the permission to use this command!
+  getitems:
+    description: Get all custom items
+    usage: §c/<command>
+    permission: cip.getitems
+    permission-message: §cYou don't have the permission to use this command!

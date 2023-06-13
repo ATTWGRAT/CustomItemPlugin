@@ -23,14 +23,17 @@ public final class Excalibur extends CustomCraftedItem implements Usable {
     private final NamespacedKey key;
     private final ItemStack item;
     private final ShapedRecipe recipe;
+    private final long cooldown;
     public Excalibur() {
+        cooldown = 10000;
         key = new NamespacedKey(CustomItemPlugin.getInstance(), "Excalibur");
         item = new ItemStack(Material.NETHERITE_SWORD);
 
         ItemMeta meta = item.getItemMeta();
-        meta.addEnchant(Enchantment.DAMAGE_ALL, 10000, true);
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 100, true);
         meta.setDisplayName(ChatColor.AQUA + "Excalibur");
         meta.setLore(Collections.singletonList(ChatColor.DARK_PURPLE + "The greatest sword"));
+        meta.setUnbreakable(true);
         item.setItemMeta(meta);
 
         recipe = new ShapedRecipe(key, item);
@@ -41,8 +44,18 @@ public final class Excalibur extends CustomCraftedItem implements Usable {
     }
 
     @Override
+    public String getName() {
+        return "EXCALIBUR";
+    }
+
+    @Override
     public ItemStack getItem() {
         return item;
+    }
+
+    @Override
+    public long getCooldown() {
+        return cooldown;
     }
 
     @Override
